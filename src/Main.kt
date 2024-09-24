@@ -23,6 +23,7 @@ fun playGame(words: List<String>){
 
         val inputGuess = readLine()?.lowercase()
 
+        //Überprüfung input
         if(inputGuess.isNullOrEmpty() || inputGuess.length != 1 || !inputGuess[0].isLetter()){
             println("Please enter a letter")
             continue
