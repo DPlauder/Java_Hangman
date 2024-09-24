@@ -2,14 +2,15 @@ import kotlin.random.Random
 fun main() {
     println("Hangman")
     var gameRunning: Boolean
+    val words = listOf("kotlin", "Graz", "Dominik")
 
     do{
-        playGame()
+        playGame(words)
         gameRunning = askToPlayAgain()
     }while(gameRunning)
 }
-fun playGame(){
-    val words = listOf("kotlin", "Graz", "Dominik")
+fun playGame(words: List<String>){
+
     val chosenWord = words[Random.nextInt(words.size)].lowercase()
     val guessedLetters = mutableSetOf<Char>()
     var guessAttempts = 8
@@ -44,7 +45,7 @@ fun playGame(){
             guessAttempts--
         }
         if(isGuessed){
-            println("/n You have guesse the word '$chosenWord")
+            println("\n You have guesse the word '$chosenWord")
         }else{
             println("Game Over! The word was: '$chosenWord")
         }
