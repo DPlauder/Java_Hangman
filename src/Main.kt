@@ -10,7 +10,6 @@ fun main() {
     }while(gameRunning)
 }
 fun playGame(words: List<String>){
-
     val chosenWord = words[Random.nextInt(words.size)].lowercase()
     val guessedLetters = mutableSetOf<Char>()
     var guessAttempts = 8
@@ -44,11 +43,11 @@ fun playGame(words: List<String>){
             println("'$guess' is not in the word")
             guessAttempts--
         }
-        if(isGuessed){
-            println("\n You have guesse the word '$chosenWord")
-        }else{
-            println("Game Over! The word was: '$chosenWord")
-        }
+    }
+    if(isGuessed){
+        println("\n You have guessed the word '$chosenWord")
+    }else{
+        println("Game Over! The word was: '$chosenWord")
     }
 }
 fun getDisplayWord(chosenWord : String, guessedLetters: Set<Char>): String{
